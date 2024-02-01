@@ -1,11 +1,11 @@
-let yearOfBirth = prompt(`what is your year of birth?`);
+let yearOfBirth = parseInt(prompt(`what is your year of birth?`));
 let cityOfUser = prompt(`what city do you live in?`);
 let favoriteSport = prompt(`what is your favorite kind of sport`);
-
-if (parseInt(yearOfBirth)) {
-  yearOfBirth = `Твой год рождения: ${yearOfBirth}`;
-} else if (yearOfBirth === null || yearOfBirth === ``) {
-  yearOfBirth = `Жаль,что вы решили не вводить свою дату рождения(`;
+let userAge = 2024 - yearOfBirth;
+if (!yearOfBirth) {
+  userAge = `Жаль,что вы решили не вводить свою дату рождения(`;
+} else {
+  userAge = `Твой возраст: ${userAge} лет`;
 }
 
 if (cityOfUser === `киев` || cityOfUser === `Киев`) {
@@ -35,6 +35,6 @@ if (favoriteSport === `футбол` || favoriteSport === `Футбол`) {
   favoriteSport = `${favoriteSport} -это круто ,ниче больше сказать не могу ,просили придумать 3 вида спорта`;
 }
 
-alert(`${yearOfBirth}
+alert(`${userAge}
 ${cityOfUser}
 ${favoriteSport}`);
